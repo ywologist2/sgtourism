@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
    <head>
-      <meta charset="UTF-8">
-      <title>Destination Singapore</title>
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+      <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.min.js"
+         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+      <link rel="stylesheet" href="/style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+      <style>
+         body {
+         position: relative; 
+         }
+      </style>
    </head>
-   <link rel="stylesheet" href="/style.css">
-   <div class="row">
-      <div class="section-inner-header">
-         <div class="title-image-left">
-            <div class="text-col">
+   <body data-spy="scroll" data-target=".navbar" data-offset="50">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+         <ul class="navbar-nav">
+            <li class="nav-item">
+               <a class="nav-link" href="#Home">Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#flightmovement">Flight Movement</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#figures">Figures</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#problemstatement">Problem Statement</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#arrivals">Tourist Arrivals</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#revenue">Tourism Revenue</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#behavior">Tourist Behavior</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#factors">Possible Factors</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#opps">Opportunities & strategies</a>
+            </li>
+         </ul>
+      </nav>
+      <div id="home" class="container-fluid bg-light"  >
+         <div class="row">
+            <div class="col-sm-4">
                <div class="text-maintitle">
                   <h1>Destination Singapore</h1>
                   <h2>Story by:<br><br>
@@ -21,156 +69,191 @@
                   </h2>
                </div>
             </div>
-         </div>
-         <div class="title-image-right"></div>
-      </div>
-   </div>
-   <!--  SECTION 1  -->
-   <div class="row">
-      <div class="section-inner">
-         <div class="text-col5">
-            <div class="text-right">
-               <h1>Flight Movement <i class="material-icons" style="font-size:60px;color:#F26322;">flight</i></h1>
-               <p>
-                  As seen from the color coded paths, the number of passengers travelling in the Asia Pacific has decreased when compared between 2019 (Pre-Covid) and 2022 (Post-Covid). 
-                  Additionally, if citizens of the other countries are not travelling to any neighbouring, we can infer that they are unlikely to travel to Singapore.
-                  This highlights the impact of Covid, where even in 2022, the tourism is unable to reach back the pre-covid numbers. 
-                  Deeper studies with data analysis needs to be conducted to understand the pre-covid tourists' behavior, the destination country main sources of revenue and some possible factors that may affect tourist arrival numbers. This is to develop smart pesonalized targeting to country specific individuals.
-               </p>
-               <ul class="Legend" style="list-style-type:none;">
-                  <li class="Legend-item">
-                     <span class="Legend-colorBox" style="background-color: #fbd48d;">
-                     </span>
-                     <span class="Legend-label">
-                     Less than 100,000
-                     </span>
-                     <span class="Legend-colorBox" style="background-color: #fcaa68;"> </span>
-                     <span class="Legend-label"> 100,000 - 500,000 </span>
-                     <span class="Legend-colorBox" style="background-color: #f56f03;">
-                     </span>
-                     <span class="Legend-label">
-                     500,000 - 1,000,000
-                     </span>
-                     <span class="Legend-colorBox" style="background-color: #af4f02;">
-                     </span>
-                     <span class="Legend-label">
-                     1,000,000 - 5,000,000
-                     </span>
-                     <span class="Legend-colorBox" style="background-color: #461f01;">
-                     </span>
-                     <span class="Legend-label">
-                     5,000,000 - 10,000,000
-                     </span>
-                  </li>
-               </ul>
-               <div class="grid">
-                  <article class="main">
-                     <h3>2019</h3>
-                     <div id="networkgraph2019"></div>
-                  </article>
-                  <section class="side">
-                     <h3>2022</h3>
-                     <div id="networkgraph2022"></div>
-                  </section>
-               </div>
+            <div class="col-sm-8"> 
+               <img src="/assets/sg.jpg"  width="990" height="700">
             </div>
          </div>
       </div>
-   </div>
+      <div id="flightmovement" class="container-fluid bg-light" style="height:1000px;padding-top:70px;padding-bottom:70px" >
+         <h1>Flight Movement <i class="material-icons" style="font-size:60px;color:#F26322;">flight</i></h1>
+         <p>
+            As seen from the color coded paths, the number of passengers travelling in the Asia Pacific has decreased when compared between 2019 (Pre-Covid) and 2022 (Post-Covid). 
+            Additionally, if citizens of the other countries are not travelling to any neighbouring, we can infer that they are unlikely to travel to Singapore.
+            This highlights the impact of Covid, where even in 2022, the tourism is unable to reach back the pre-covid numbers. 
+            Deeper studies with data analysis needs to be conducted to understand the pre-covid tourists' behavior, the destination country main sources of revenue and some possible factors that may affect tourist arrival numbers. This is to develop smart pesonalized targeting to country specific individuals.
+         </p>
+         <ul class="Legend" style="list-style-type:none;">
+            <li class="Legend-item">
+               <span class="Legend-colorBox" style="background-color: #fbd48d;">
+               </span>
+               <span class="Legend-label">
+               Less than 100,000
+               </span>
+               <span class="Legend-colorBox" style="background-color: #fcaa68;"> </span>
+               <span class="Legend-label"> 100,000 - 500,000 </span>
+               <span class="Legend-colorBox" style="background-color: #f56f03;">
+               </span>
+               <span class="Legend-label">
+               500,000 - 1,000,000
+               </span>
+               <span class="Legend-colorBox" style="background-color: #af4f02;">
+               </span>
+               <span class="Legend-label">
+               1,000,000 - 5,000,000
+               </span>
+               <span class="Legend-colorBox" style="background-color: #461f01;">
+               </span>
+               <span class="Legend-label">
+               5,000,000 - 10,000,000
+               </span>
+            </li>
+         </ul>
+         <div class="row">
+            <div class="col-sm-6" style="background-color:#F4DACF;">
+               <h3>2019</h3>
+               <div id="networkgraph2019"></div>
+            </div>
+            <div class="col-sm-6" style="background-color:#FAFAFA;">
+               <h3>2022</h3>
+               <div id="networkgraph2022"></div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <div id="figures" class="container-fluid" style="height:1200px; padding-top:70px;padding-bottom:70px; background-image: url('assets/sg2.jpg'); background-repeat: no-repeat;
+         background-size:cover; position: sticky;
+         position: -webkit-sticky;
+         top: 0px;
+         height:100%; ">
+         <h1>Figures At A Glance</h1>
+         <br><br>
 
-   <div class="row">
-      <div class="section-inner_short">
-         <div class="image-col-section">
-            <div class="background_1">   
-               <div class="figcontainer">
-               <h1>Figures At A Glance</h1>
-               <br>
-               <div class="figuresgrid">
-             
-               <div class="square"> 
-                   <div class="counter" style="font-size:100px;">2019</div> <b> Year </b>with <b>HIGHEST</b> Visitor Rate & Receipt
+               <div class="row" style="background-color:rgb(0,0,0,.4);padding:50px;">
+                  <div class="col-sm">
+                     <div class="counter" style="font-size:100px;font-family: 'Montserrat';">2019</div>
+                     <p style="color:white;"> <b> Year </b>with <b>HIGHEST</b> Visitor Rate & Receipt </p>
+                  </div>
+                  <div class="col-sm"><div class="counter" style="font-size:100px;font-family: 'Montserrat';">2021</div>
+                  <p style="color:white;"><b> Year </b>with <b>LOWEST</b> Visitor Rate & Receipt</p>
                </div>
+                  <div class="col-sm" >
+                     <div class="counter" style="font-size:100px;font-family: 'Montserrat';"> 1809</div>
+                     <p style="color:white;"><b>Percent (%)</b> Tourist Arrival <b>GROWTH</b> between 2021 (Covid Period)  and 2022 (Post-Covid Period)</p>
+                  </div>
+                  <div class="col-sm" >
+                     <div class="counter" style="font-size:100px;font-family: 'Montserrat';"> 630</div>
+                     <p style="color:white;"><b> Percent (%)</b> Tourist Receipt <b>GROWTH</b> between 2021 (Covid Period) and 2022 (Post-Covid Period)</p>
+                     </div>
+                </div>
+              
 
-               <div class="square"> 
-                  <div class="counter" style="font-size:100px;">2021</div> <b> Year </b>with <b>LOWEST</b> Visitor Rate & Receipt
-              </div>
-
-              <div class="square"><div class="counter" style="font-size:100px;"> 1809</div> <b>Percent (%)</b> Tourist Arrival <b>GROWTH</b> between 2021 (Covid Period)  and 2022 (Post-Covid Period)</div>
-
-              <div class="square">
-              <div class="counter" style="font-size:100px;"> 630</div> 
-              <b>Percent (%)</b> Tourist Receipt <b>GROWTH</b> between 2021 (Covid Period) and 2022 (Post-Covid Period)
-              </div>
+             
+               
+           
+        
+      </div>
+      <div id="problemstatement" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px; height:500px;">
+         <div class="row">
+            <div class="col-sm-6" >
+               <img src="assets/covid_airport.jpg" style="width:650px; height:400px;">
+            </div>
+            <div class="col-sm-6">
               
           
-              
-
-               </div>
-               
-               </div>
-               </div>
-             </div>
-        
-         </div>
-         
-      </div>
-
-   <div class="row">
-      <div class="section-inner">
-         <div class="image-col-section">
-            <div class="sticky-section-2"></div>
-         </div>
-         <div class="text-col1">
-            <div class="text-right">
-               <div class="grey-underline">
-                  <h1>The Problem</h1>
-               </div>
-               <p>
-                  The current tourism economy in Singapore has been severely impacted by the Covid-19 pandemic, as indicated by recent studies conducted by the Singapore Tourism Board (STB), which shows a decline of 25 to 30% in visitor arrivals in 2020 (Tan et al., 2020). 
-                  Against this backdrop of economic challenges, the question arises as to how to promote and strengthen Singapore's position as a leading tourist destination and what can be done to enhance the growth of Singapore's tourism industry and its constituent sectors.
-               </p>
-               <br><br>
-             
-             
-                
-               <div class="square"><div class="counter" style="font-size:100px;">-93.2 </div> <b>Percent (%)</b>Tourist Receipt dip comparing 2019 (Pre Covid Period) vs 2021 (During Covid Period)</div>
+                     <h1>The Problem</h1>
                   
-                  <br><br>
-                  <br><br>
-                  <br><br>
-                  <br><br>
-                  <br><br>
-                  <div class="square"><div class="counter" style="font-size:100px;"> -98.2</div> <b>Percent (%)</b> Tourist Arrival dip comparing 2019 (Pre Covid Period) vs 2021 (During Covid Period)</div>
-               
+                  <p>
+                     The current tourism economy in Singapore has been severely impacted by the Covid-19 pandemic, as indicated by recent studies conducted by the Singapore Tourism Board (STB), which shows a decline of 25 to 30% in visitor arrivals in 2020 (Tan et al., 2020). 
+                     Against this backdrop of economic challenges, the question arises as to how to promote and strengthen Singapore's position as a leading tourist destination and what can be done to enhance the growth of Singapore's tourism industry and its constituent sectors.
+                  </p>
+                  <div class="row">
+                     <div class="col-sm-6" >
+                       <div class="counter" style="color:black;font-size:60px;font-family: 'Montserrat';">-93.2 </div> <p style="color:black;font-size:14px;"><b>Percent (%)</b> Tourist Receipt dip comparing 2019 (Pre Covid Period) vs 2021 (During Covid Period)</p>
+
+                     </div>
+                     <div class="col-sm-6" >
+                        <div class="counter" style="color:black;font-size:60px;font-family: 'Montserrat';">-98.2 </div> <p style="color:black;font-size:14px;"><b>Percent (%)</b> Tourist Arrival dip comparing 2019 (Pre Covid Period) vs 2021 (During Covid Period)</p>
+                     </div>
+                   </div>
             
-               
-            </div>
-         </div>
+          
       </div>
-   </div>
-   <!--  SECTION 2  -->
-   <div class="row">
-      <div class="section-inner">
-         <div class="text-col">
-            <div class="text-right">
-               <h1>Tourist Arrivals <i class="material-icons" style="font-size:60px;color:#F26322;">flight_land</i></h1> 
-              
-               <p>
-                  Majority of the visitors are from the Southeast Asia region and they visited Singapore the most in Quarter 4, during the months of October, November, December. 
-                  We then deep-dive and categorise the countries these tourists came from into the top 10 category. 
-                  We can see that there are almost twice as much tourist from Indonesia and China as compared to the others. 
-                  They probably play a huge role in contributing to the Singapore Tourism Economy.
+      </div>
+      </div>
+
+
+      <div id="arrivals" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+         <h1>Tourist Arrivals <i class="material-icons" style="font-size:60px;color:#F26322;">flight_land</i></h1>
+         <p>
+            Majority of the visitors are from the Southeast Asia region and they visited Singapore the most in Quarter 4, during the months of October, November, December. 
+            We then deep-dive and categorise the countries these tourists came from into the top 10 category. 
+            We can see that there are almost twice as much tourist from Indonesia and China as compared to the others. 
+            They probably play a huge role in contributing to the Singapore Tourism Economy.
+         </p>
+         <div class='tableauPlaceholder' id='viz1680600460141' style='position: relative'>
+            <noscript><a href='#'><img alt='International Tourist Arrival Overview ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
+            <object class='tableauViz'  style='display:none;'>
+               <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+               <param name='embed_code_version' value='3' />
+               <param name='site_root' value='' />
+               <param name='name' value='VA_Project_Country_Persona&#47;Dashboard1' />
+               <param name='tabs' value='no' />
+               <param name='toolbar' value='yes' />
+               <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard1&#47;1.png' />
+               <param name='animate_transition' value='yes' />
+               <param name='display_static_image' value='yes' />
+               <param name='display_spinner' value='yes' />
+               <param name='display_overlay' value='yes' />
+               <param name='display_count' value='yes' />
+               <param name='language' value='en-US' />
+            </object>
+         </div>
+         <script type='text/javascript'>                    var divElement = document.getElementById('viz1680600460141');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='877px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      </div>
+
+
+
+      <div id="revenue" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px; height:2900px;">
+         <h1>Tourism Revenue  <i class="material-icons" style="font-size:60px;color:#F26322;">paid</i></h1>
+         <p>In this section, we analyses the sources of Singapore's tourism income, which are mainly from the accommodations, shopping, sightseing/entertainment & gaming and Food & Beverage.
+            There after we further analyse the hotel and attraction sector, which are the most common touchpoints that the tourist will interact with, on how this two sectors contributed to the Singapore's tourism revenue. <b>Click on each tab to view the interactive dashboard(s).</b>
+         </p>
+         <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+               <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">First Panel</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Revenue From Hotel</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Revenue From Attractions</a>
+            </li>
+         </ul>
+         <!-- Tab panes -->
+         <div class="tab-content">
+            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+               <h3>Insights Summary</h3>
+               <p>From Tourism Spending by Industry overview, where we look at the total revenue trend by the category.
+                  <br>
+                  We observed that the category of “Other components” generated the biggest revenue, followed by a close fight between accommodations, shopping and the entertainment areas.
+                  <br>
+                  Other components refers to airfares, port taxes, local transportation, business, medical, education-related items. 
+                  <br><br>
+                  Additionally based on the quarter cycle analysis, we observed that the revenues increases as we approach the end of the year, of which Q4 has the highest revenues.
+                  <br>
+                  This seems to suggest that people tend to spend more at a later part of the year.
                </p>
-               <div class='tableauPlaceholder' id='viz1680420565325' style='position: relative'>
-                  <noscript><a href='#'><img alt='International Tourist Arrival Overview ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
+               <br>
+               <div class='tableauPlaceholder' id='viz1680600572494' style='position: relative'>
+                  <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HybridDashboard&#47;1_rss.png' style='border: none' /></a></noscript>
                   <object class='tableauViz'  style='display:none;'>
                      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                      <param name='embed_code_version' value='3' />
                      <param name='site_root' value='' />
-                     <param name='name' value='VA_Project_Country_Persona&#47;Dashboard1' />
-                     <param name='tabs' value='no' />
+                     <param name='name' value='va_project_kahhe&#47;HybridDashboard' />
+                     <param name='tabs' value='yes' />
                      <param name='toolbar' value='yes' />
-                     <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard1&#47;1.png' />
+                     <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HybridDashboard&#47;1.png' />
                      <param name='animate_transition' value='yes' />
                      <param name='display_static_image' value='yes' />
                      <param name='display_spinner' value='yes' />
@@ -179,222 +262,119 @@
                      <param name='language' value='en-US' />
                   </object>
                </div>
-               <script type='text/javascript'>                    
-                  var divElement = document.getElementById('viz1680420565325');                    
-                  var vizElement = divElement.getElementsByTagName('object')[0];                    
-                  if ( divElement.offsetWidth > 800 ) { 
-                     vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='1200px';vizElement.style.height='877px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-               </script>
+               <script type='text/javascript'>                    var divElement = document.getElementById('viz1680600572494');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='2800px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
             </div>
-         </div>
-      </div>
-   </div>
-   <div class="row">
-      <div class="section-inner_tableau">
-         <div class="text-col5">
-            <div class="text-right">
-               <h1>Tourism Revenue  <i class="material-icons" style="font-size:60px;color:#F26322;">paid</i></h1>
-               <p>In this section, we analyses the sources of Singapore's tourism income, which are mainly from the accommodations, shopping, sightseing/entertainment & gaming and Food & Beverage.
-                  
-                  There after we further analyse the hotel and attraction sector, which are the most common touchpoints that the tourist will interact with, on how this two sectors contributed to the Singapore's tourism revenue. Click on each tab to view the interactive dashboard(s).</p>
-               <div class="tabset">
-                  <input type="radio" name="tabset" id="tab19" aria-controls="tab19_panel" checked>
-                  <label for="tab19">Tourist Spending Overview</label>
-                  <!-- Tab 2 -->
-                  <input type="radio" name="tabset" id="tab17" aria-controls="tab17_panel">
-                  <label for="tab17">Revenue From Hotel</label>
-                  <!-- Tab 3 -->
-                  <input type="radio" name="tabset" id="tab18" aria-controls="tab18_panel">
-                  <label for="tab18">Revenue From Attraction</label>
-                  <div class="tab-panels">
-                     <section id="tab19" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p>From Tourism Spending by Industry overview, where we look at the total revenue trend by the category.
-                           <br>
-                           We observed that the category of “Other components” generated the biggest revenue, followed by a close fight between accommodations, shopping and the entertainment areas.
-                           <br>
-                           Other components refers to airfares, port taxes, local transportation, business, medical, education-related items. 
-                           <br><br>
-                           Additionally based on the quarter cycle analysis, we observed that the revenues increases as we approach the end of the year, of which Q4 has the highest revenues.
-                           <br>
-                           This seems to suggest that people tend to spend more at a later part of the year.
-                        </p>
-                        <br>
-                        <div class='tableauPlaceholder' id='viz1680406053986' style='position: relative'>
-                           <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HybridDashboard&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='va_project_kahhe&#47;HybridDashboard' />
-                              <param name='tabs' value='yes' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HybridDashboard&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680406053986');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1200px';vizElement.style.maxWidth='1200px';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1200px';vizElement.style.maxWidth='1200px';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='1200px';vizElement.style.minHeight='2800px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab17" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p>
-                           The hotel industry was performing great as it was growing steadily pre-covid.
-                           Referencing to the quarterly occupancy rate by the various hotel size at the bottom right, 
-                           <br>
-                           we noticed that the bigger the hotel, the higher the occupancy rate.
-                           <br><br>
-                           Something interesting that we observed is that Q3 has the highest occupancy rate instead of Q4, which differs from tourism revenue trend earlier.
-                           <br><br>
-                           Using the monthly dataset, we observed that the highest occupancy rate by month is July, followed by August, then November.
-                           <br><br>
-                           This is the case where we consider the idea of “quantity do not translate to quality”. 
-                           <br>
-                           If Singapore wanted to boost the tourism revenue, they should look at other factors rather than focusing on just bringing in more tourists”
-                        </p>
-                        <br>
-                        <div class='tableauPlaceholder' id='viz1680406033530' style='position: relative'>
-                           <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HotelDashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='va_project_kahhe&#47;HotelDashboard1' />
-                              <param name='tabs' value='yes' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HotelDashboard1&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680406033530');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='800px';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='800px';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='800px';vizElement.style.minHeight='2800px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab18" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p>
-                           The number of visitors to attractions are of healthy level before covid strikes. 
-                           <br>
-                           It is also consistent with the hotel occupancy trend, the highest period of visitor is usually during the month of August.
-                           <br>
-                           When we look at quarterly information, the highest visitor rate is Q3, then followed by Q4, again, which is also consistent with hotel dataset.
-                           <br>
-                           Next, we dive into the visitor count by attractions, and observed that the most popular attractions is Singapore Zoo, followed by Night Safari, then Science Center.
-                        </p>
-                        <div class='tableauPlaceholder' id='viz1680406045346' style='position: relative'>
-                           <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;AttractionDashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='va_project_kahhe&#47;AttractionDashboard1' />
-                              <param name='tabs' value='yes' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;AttractionDashboard1&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680406045346');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='800px';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='800px';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='800px';vizElement.style.minHeight='2800px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!--  SECTION 5  -->
-   <div class="row">
-      <div class="section-inner_tableau1">
-         <div class="text-col5">
-            <div class="text-right">
-               <h1>Tourist Behavior <i class="material-icons" style="font-size:60px;color:#F26322;">face</i></h1>
-               <p> In this section, we want to understand the behavior of country-specific tourist in order to be able to develop country-specific marketing/management strategy.
-                  We compared the behavior of the tourist from Germany, Australia, Canada, France and China.
-                  Click on each tab to view the interactive dashboard(s).
+            <div class="tab-pane" id="tabs-2" role="tabpanel">
+               <h3>Insights Summary</h3>
+               <p>
+                  The hotel industry was performing great as it was growing steadily pre-covid.
+                  Referencing to the quarterly occupancy rate by the various hotel size at the bottom right, 
+                  <br>
+                  we noticed that the bigger the hotel, the higher the occupancy rate.
+                  <br><br>
+                  Something interesting that we observed is that Q3 has the highest occupancy rate instead of Q4, which differs from tourism revenue trend earlier.
+                  <br><br>
+                  Using the monthly dataset, we observed that the highest occupancy rate by month is July, followed by August, then November.
+                  <br><br>
+                  This is the case where we consider the idea of “quantity do not translate to quality”. 
+                  <br>
+                  If Singapore wanted to boost the tourism revenue, they should look at other factors rather than focusing on just bringing in more tourists”
                </p>
                <br>
-               <div class="tabset">
-                  <!-- Tab 1 -->
-                  <input type="radio" name="tabset" id="tab1" aria-controls="tab1_panel" checked>
-                  <label for="tab1">Main Purpose of Visit</label>
-                  <!-- Tab 2 -->
-                  <input type="radio" name="tabset" id="tab2" aria-controls="tab2_panel">
-                  <label for="tab2">Travelling Companion </label>
-                  <!-- Tab 3 -->
-                  <input type="radio" name="tabset" id="tab3" aria-controls="tab3_panel">
-                  <label for="tab3">Attraction and Sites Visited</label>
-                  <!-- Tab 4 -->
-                  <input type="radio" name="tabset" id="tab4" aria-controls="tab4_panel">
-                  <label for="tab4">Shopping Items</label>
-                  <div class="tab-panels">
-                     <section id="tab1_panel" class="tab-panel">
-                        <h3>Insights Summary</h3>
+               <div class='tableauPlaceholder' id='viz1680600661515' style='position: relative'>
+                  <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HotelDashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
+                  <object class='tableauViz'  style='display:none;'>
+                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                     <param name='embed_code_version' value='3' />
+                     <param name='site_root' value='' />
+                     <param name='name' value='va_project_kahhe&#47;HotelDashboard1' />
+                     <param name='tabs' value='yes' />
+                     <param name='toolbar' value='yes' />
+                     <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;HotelDashboard1&#47;1.png' />
+                     <param name='animate_transition' value='yes' />
+                     <param name='display_static_image' value='yes' />
+                     <param name='display_spinner' value='yes' />
+                     <param name='display_overlay' value='yes' />
+                     <param name='display_count' value='yes' />
+                     <param name='language' value='en-US' />
+                  </object>
+               </div>
+               <script type='text/javascript'>                    var divElement = document.getElementById('viz1680600661515');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='2800px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            </div>
+            <div class="tab-pane" id="tabs-3" role="tabpanel">
+               <h3>Insights Summary</h3>
+               <p>
+                  The number of visitors to attractions are of healthy level before covid strikes. 
+                  <br>
+                  It is also consistent with the hotel occupancy trend, the highest period of visitor is usually during the month of August.
+                  <br>
+                  When we look at quarterly information, the highest visitor rate is Q3, then followed by Q4, again, which is also consistent with hotel dataset.
+                  <br>
+                  Next, we dive into the visitor count by attractions, and observed that the most popular attractions is Singapore Zoo, followed by Night Safari, then Science Center.
+               </p>
+               <div class='tableauPlaceholder' id='viz1680600807601' style='position: relative'>
+                  <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;AttractionDashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
+                  <object class='tableauViz'  style='display:none;'>
+                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                     <param name='embed_code_version' value='3' />
+                     <param name='site_root' value='' />
+                     <param name='name' value='va_project_kahhe&#47;AttractionDashboard1' />
+                     <param name='tabs' value='yes' />
+                     <param name='toolbar' value='yes' />
+                     <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;va&#47;va_project_kahhe&#47;AttractionDashboard1&#47;1.png' />
+                     <param name='animate_transition' value='yes' />
+                     <param name='display_static_image' value='yes' />
+                     <param name='display_spinner' value='yes' />
+                     <param name='display_overlay' value='yes' />
+                     <param name='display_count' value='yes' />
+                     <param name='language' value='en-US' />
+                  </object>
+               </div>
+               <script type='text/javascript'>                    var divElement = document.getElementById('viz1680600807601');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1500px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='2050px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='2800px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            </div>
+         </div>
+      </div>
+      <div id="behavior" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+         <h1>Tourist Behavior <i class="material-icons" style="font-size:60px;color:#F26322;">face</i></h1>
+               <p> In this section, we want to understand the behavior of country-specific tourist in order to be able to develop country-specific marketing/management strategy.
+                  We compared the behavior of the tourist from Germany, Australia, Canada, France and China.
+                  <b>Click on each tab to view the interactive dashboard(s).</b>
+               </p>
+
+               <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link active" data-toggle="tab" href="#tabs-4" role="tab">Main Purpose of Visit</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-5" role="tab">Travelling Companion</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Attraction and Sites Visited</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Shopping Items</a>
+                  </li>
+               </ul><!-- Tab panes -->
+               <div class="tab-content">
+                  <div class="tab-pane active" id="tabs-4" role="tabpanel">
+                     <h3>Insights Summary</h3>
                         <p>
                            The main purpose of visit is for holidays followed by general business purpose. 
                            All the 5 countries' travellers main purpose of visit is for holiday. The next most common purpose for the Germans, French and China are for general business purposes.
                            While the Canadians and Australians travel to Singapore to visit friends/relatives.
                         </p>
-                        <div class='tableauPlaceholder' id='viz1680421445221' style='position: relative'>
-                           <noscript><a href='#'><img alt='Main Purpose of Visit ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VA_Project_Country_Persona&#47;Dashboard2' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard2&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680421445221');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='800px';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab2_panel" class="tab-panel">
-                        <h3>Insights Summary</h3>
+                        <div class='tableauPlaceholder' id='viz1680603651402' style='position: relative'><noscript><a href='#'><img alt='Main Purpose of Visit ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VA_Project_Country_Persona&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680603651402');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  </div>
+                  <div class="tab-pane" id="tabs-5" role="tabpanel">
+                     <h3>Insights Summary</h3>
                         <p>
                            Most tourist travel with mainly spouse, followed by solo travel and then  with friends. 
                            This can be observed across all the 5 countries.
                         </p>
-                        <div class='tableauPlaceholder' id='viz1680421509952' style='position: relative'>
-                           <noscript><a href='#'><img alt='Travelling Companion  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard3&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VA_Project_Country_Persona&#47;Dashboard3' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard3&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680421509952');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='800px';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab3_panel" class="tab-panel">
-
-                        <h3>Insights Summary</h3>
+                        <div class='tableauPlaceholder' id='viz1680603691408' style='position: relative'><noscript><a href='#'><img alt='Travelling Companion  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VA_Project_Country_Persona&#47;Dashboard3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680603691408');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  </div>
+                  <div class="tab-pane" id="tabs-6" role="tabpanel">
+                     <h3>Insights Summary</h3>
                         <p>
                            For the free attractions, we found that the Germans, French and Canadian like visiting Chinatown while the Australians and Chinese like to visit the Orchard Road. 
                            Orchard Road is the next most visited location.
@@ -403,730 +383,538 @@
                            German, French, Canadian and Australian visit Gardens By the Bay the most, on the other hand, China tourist like to visit Integrated Resort the most.
                            This is then followed by the most number of German, French, Canadian and Australian visiting the Integrated Resort while the China visitors visit Sentosa.
                         </p>
-
-                        <div class='tableauPlaceholder' id='viz1680421570706' style='position: relative'>
-                           <noscript><a href='#'><img alt='Attraction and Sites Visited ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard4&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VA_Project_Country_Persona&#47;Dashboard4' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard4&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680421570706');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='800px';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab4_panel" class="tab-panel">
-
-                        
-                        <h3>Insights Summary</h3>
-                        <p>
-                          All the 5 country visitors spent the most on shopping for fashion and accessories, followed by souvenirs and gifts (except for the chinese). 
-                          Instead, the Chinese shop for cosmetics,perfumes and toileteries and confectionery/food items.
-                        </p>
-
-                        <div class='tableauPlaceholder' id='viz1680421589771' style='position: relative'>
-                           <noscript><a href='#'><img alt='Shopping Item Popularity &amp; Expenses ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard5&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VA_Project_Country_Persona&#47;Dashboard5' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard5&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680421589771');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='800px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='800px';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
+                        <div class='tableauPlaceholder' id='viz1680603717155' style='position: relative'><noscript><a href='#'><img alt='Attraction and Sites Visited ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VA_Project_Country_Persona&#47;Dashboard4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680603717155');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  </div>
+                  <div class="tab-pane" id="tabs-7" role="tabpanel">
+                     <h3>Insights Summary</h3>
+                     <p>
+                       All the 5 country visitors spent the most on shopping for fashion and accessories, followed by souvenirs and gifts (except for the chinese). 
+                       Instead, the Chinese shop for cosmetics,perfumes and toileteries and confectionery/food items.
+                     </p>
+                     <div class='tableauPlaceholder' id='viz1680603751063' style='position: relative'><noscript><a href='#'><img alt='Shopping Item Popularity &amp; Expenses ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VA_Project_Country_Persona&#47;Dashboard5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VA_Project_Country_Persona&#47;Dashboard5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680603751063');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                   </div>
                </div>
-            </div>
-         </div>
       </div>
-   </div>
-   <!--  SECTION 5  -->
-   <div class="row">
-      <div class="section-inner_tableau2">
-         <div class="text-col5">
-            <div class="text-right">
-               <h1>Investigating The Possible Factors Affecting Tourist Arrivals <i class="material-icons" style="font-size:60px;color:#F26322;">search</i></h1>
+      <div id="factors"class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+         <h1>Investigating The Possible Factors Affecting Tourist Arrivals <i class="material-icons" style="font-size:60px;color:#F26322;">search</i></h1>
                <p>In this section we hypothesised that the following factors may affect the tourist arrivals. 
                   We then investigated whether these factors have any correlation or similar trends with the actual tourist arrivals figures. 
                   Click on each tab to view the interactive dashboard(s).
                </p>
-               <div class="tabset">
-                  <!-- Tab 1 -->
-                  <input type="radio" name="tabset" id="tab8" aria-controls="tab8_panel" checked>
-                  <label for="tab8">Visitor Rates & Spendings</label>
-                  <!-- Tab 2 -->
-                  <input type="radio" name="tabset" id="tab9" aria-controls="tab9_panel">
-                  <label for="tab9">Distance</label>
-                  <!-- Tab 3 -->
-                  <input type="radio" name="tabset" id="tab10" aria-controls="tab10_panel">
-                  <label for="tab10">Exchange Rate/Big Mac</label>
-                  <input type="radio" name="tabset" id="tab11" aria-controls="tab11_panel">
-                  <label for="tab11">Seasonality</label>
-                  <input type="radio" name="tabset" id="tab12" aria-controls="tab12_panel">
-                  <label for="tab12">Public Holidays/Population/GDP</label>
-                  <input type="radio" name="tabset" id="tab13" aria-controls="tab13_panel">
-                  <label for="tab13">Google Search Trends</label>
 
-                  <div class="tab-panels">
-                     <section id="tab8_panel" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p> We can analysed that when there is a higher visitor rate, the higher the revenue from the tourist spendings. 
-                           As such Singapore needs to grow the visitor rate to increase in tourism revenue. </p>
-                        <div class='tableauPlaceholder' id='viz1680361036362' style='position: relative'>
-                           <noscript><a href='#'><img alt='Dashboard One ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardOne&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VAProjectV2&#47;DashboardOne' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardOne&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680361036362');                  var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else { vizElement.style.width='1200px';vizElement.style.height='1077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab9_panel" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p>
-                           For the distane factor affecting the tourist arrival rate, we can infer that further the country is, the lower the visitor rates.
-                           However, we note that there are other underlying factors that is more significant (like GDP and Spending Power) that affect the visitors rates.
-                        </p>
-                        <div class='tableauPlaceholder' id='viz1680361226708' style='position: relative'>
-                           <noscript><a href='#'><img alt='DashboardThree ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardThree&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VAProjectV2&#47;DashboardThree' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardThree&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680361226708');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='655px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='655px';} else { vizElement.style.width='1200px';vizElement.style.height='1077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab10_panel" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p>Exchange rates affect countries differently, typically we observe that better rates leads to higher visitor rates. 
-                           When countries have better exchange rates, they have more spending power.
-                           For instance, for tourists from Australia, there's a positive correlation, but for the Philippines, it's negative. One hypothesis is that Filipinos might want to travel further to other countries when exchange rates are good.
-                           <br><br>
-                           Visitor rates can also be determined by spending power, using the Big Mac index. Higher prices for a Big Mac in a visitor's home country indicate higher spending power. 
-                           Price-sensitivity differs for each countries. Typically most countries will have lower visitor rates if food prices are higher in Singapore. 
-                           Australia is more easily affected by food prices than the Philippines, as shown in the charts.
-                        </p>
-                        <div class='tableauPlaceholder' id='viz1680361099593' style='position: relative'>
-                           <noscript><a href='#'><img alt='Dashboard Two ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardTwo&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VAProjectV2&#47;DashboardTwo' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardTwo&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680361099593');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='655px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='655px';} else { vizElement.style.width='1200px';vizElement.style.height='1927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab11_panel" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p>
-                           Weather, such as the seasons and temperature, in both Singapore and the home country can also impact visitor rates. Here we map the various ranges of temperature to seasons. 
-                           If the home country has hot weather, people may be less likely to visit Singapore, as they prefer to enjoy the cooler weather in their home country. 
-                           This is because Singapore's hot weather all year round may also deter tourists.
-                        </p>
-                        <div class='tableauPlaceholder' id='viz1680361336366' style='position: relative'>
-                           <noscript><a href='#'><img alt='DashboardFour ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFour&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VAProjectV2&#47;DashboardFour' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFour&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680361336366');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='655px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='655px';} else { vizElement.style.width='1400px';vizElement.style.height='1727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     <section id="tab12_panel" class="tab-panel">
-                        <h3>Insights Summary</h3>
-                        <p>
-                           The number of public holidays in a given month in each country can also impact visitor rates. 
-                           In general, fewer holidays in a specific month lead to higher visitor rates in Singapore, possibly because Singapore is a smaller destination with fewer activities compared to other countries.
-                           <br><br>
-                           Visitor rates are also influenced by various demographic factors. 
-                           Population size and GDP have a positive correlation with visitor rates, while unemployment rates have a negative correlation. 
-                           Among these factors, population size has the strongest correlation with visitor rates, as determined by correlation analysis.
-                        </p>
-                        <div class='tableauPlaceholder' id='viz1680361372329' style='position: relative'>
-                           <noscript><a href='#'><img alt='DashboardFive ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFive&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='VAProjectV2&#47;DashboardFive' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFive&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680361372329');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='800px';vizElement.style.height='655px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='800px';vizElement.style.height='655px';} else { vizElement.style.width='1200px';vizElement.style.height='2027px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-
-                     <section id="tab13_panel" class="tab-panel">
-
-                        <h3> Insights Summary</h3>
-                        <p> The most commonly searched attractions across all countries nationalities are Raffles Singapore, Orchard Road and Sentosa.
-                               People tend to visit places they research on. 
-                               <br>
-                               However, there is a surprise finding for Orchid Garden, tourist do not research on the place but they do visit the place.
-   
-                        </p>
-                        <div class='tableauPlaceholder' id='viz1680532205360' style='position: relative'>
-                           <noscript><a href='#'><img alt='Overall Google Search (Per Attraction) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;OverallGoogleSearchPerAttraction&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='GoogleSearchTrendsPerAttraction&#47;OverallGoogleSearchPerAttraction' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;OverallGoogleSearchPerAttraction&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680532205360');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else { vizElement.style.width='1200px';vizElement.style.height='1077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-         
-                        <div class='tableauPlaceholder' id='viz1680512521655' style='position: relative'>
-                           <noscript><a href='#'><img alt='Comparision between google search and visitation rates ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;Comparisionbetweengooglesearchandvisitationrates&#47;1_rss.png' style='border: none' /></a></noscript>
-                           <object class='tableauViz'  style='display:none;'>
-                              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                              <param name='embed_code_version' value='3' />
-                              <param name='site_root' value='' />
-                              <param name='name' value='GoogleSearchTrendsPerAttraction&#47;Comparisionbetweengooglesearchandvisitationrates' />
-                              <param name='tabs' value='no' />
-                              <param name='toolbar' value='yes' />
-                              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;Comparisionbetweengooglesearchandvisitationrates&#47;1.png' />
-                              <param name='animate_transition' value='yes' />
-                              <param name='display_static_image' value='yes' />
-                              <param name='display_spinner' value='yes' />
-                              <param name='display_overlay' value='yes' />
-                              <param name='display_count' value='yes' />
-                              <param name='language' value='en-US' />
-                           </object>
-                        </div>
-                        <script type='text/javascript'>                    var divElement = document.getElementById('viz1680512521655');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='1277px';} else { vizElement.style.width='1200px';vizElement.style.height='1277px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-                     </section>
-                     
+               <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item">
+                     <a class="nav-link active" data-toggle="tab" href="#tabs-8" role="tab">Visitor Rates & Spendings</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-9" role="tab">Distance</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-10" role="tab">Exchange Rate/Big Mac</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-11" role="tab">Seasonality</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-12" role="tab">Public Holidays/Population/GDP</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#tabs-13" role="tab">Google Search Trends</a>
+                  </li>
+               </ul><!-- Tab panes -->
+               <div class="tab-content">
+                  <div class="tab-pane active" id="tabs-8" role="tabpanel">
+                     <h3>Insights Summary </h3>
+                     <p>
+                        Singapore's tourism industry has shown steady growth since 2008, as reflected in its visitor rates. However, the industry was significantly impacted by the COVID-19 pandemic, with only 11 million visitors in 2022, a sharp decline from the peak of 35 million visitors in 2019. Typically, the first quarter is the most popular time for visitors, while the third quarter is the least popular.
+                        <br>
+                        The revenue generated from tourism is closely linked to the number of visitors, so increasing the visitor rate is crucial for Singapore to boost its tourism revenue. To achieve this, Singapore may need to implement strategies to attract more tourists, such as improving its tourism infrastructure, offering unique experiences, and promoting its attractions and culture more effectively
+                     </p>
+                     <div class='tableauPlaceholder' id='viz1680605476666' style='position: relative'><noscript><a href='#'><img alt='Dashboard One ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardOne&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VAProjectV2&#47;DashboardOne' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardOne&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680605476666');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='1177px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
                   </div>
+                  <div class="tab-pane" id="tabs-9" role="tabpanel">
+                     <h3>Insights Summary </h3>
+                     <p>
+                        For the distant factor, we can infer that further the country is, the lower the visitor rates. However, we note that there are other underlying factors that is more significant (like GDP and Spending Power) that affect the visitors rates.
+                     </p>
+                     <div class='tableauPlaceholder' id='viz1680605503462' style='position: relative'><noscript><a href='#'><img alt='DashboardThree ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardThree&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VAProjectV2&#47;DashboardThree' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardThree&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680605503462');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='1077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  </div>
+                  <div class="tab-pane" id="tabs-10" role="tabpanel">
+                     <h3>Insights Summary </h3>
+                     <p>
+                        Exchange rates affect countries differently, typically we observe that better rates leads to higher visitor rates. When countries have better exchange rates, they have more spending power. This varies across countries, for instance, for tourists from Australia, there's a positive correlation, but for the Philippines, it's negative. One hypothesis is that Filipinos might want to travel further to other countries when exchange rates are good. 
+                     
+                        <br>
+                        Visitor rates can also be determined by spending power, using the Big Mac index. Higher prices for a Big Mac in a visitor's home country indicate higher spending power. Price-sensitivity differs for each countries. Typically most countries will have lower visitor rates to Singapore if food prices are higher in Singapore. For example, Australia is more easily affected by food prices than the Philippines, as shown in the charts.
+                     </p>
+                     <div class='tableauPlaceholder' id='viz1680605535526' style='position: relative'><noscript><a href='#'><img alt='Dashboard Two ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardTwo&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VAProjectV2&#47;DashboardTwo' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardTwo&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680605535526');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='1927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  </div>
+                  <div class="tab-pane" id="tabs-11" role="tabpanel">
+                     <h3>Insights Summary </h3>
+                     <p>
+                        The weather, including the seasons and temperature, in both Singapore and the visitor's home country can also have a significant impact on visitor rates. 
+                        <br>
+                        To illustrate this, we have mapped the temperature ranges to corresponding seasons. We observe that if a visitor's home country has hot weather, they may be less inclined to travel to Singapore, as they would prefer to bask in the cooler weather of their home country. This is because Singapore's year-round hot weather might not be attractive to some tourists.
+                     </p>
+                     <div class='tableauPlaceholder' id='viz1680605566962' style='position: relative'><noscript><a href='#'><img alt='DashboardFour ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFour&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VAProjectV2&#47;DashboardFour' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFour&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680605566962');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='1727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  </div>
+                  <div class="tab-pane" id="tabs-12" role="tabpanel">
+                     <h3>Insights Summary </h3>
+                     <p>
+                        The number of public holidays in a given month in each country can also impact visitor rates. In general, fewer holidays in a specific month lead to higher visitor rates in Singapore, possibly because Singapore is a smaller destination with fewer activities compared to other countries.
+                        <br>
+                        In addition to the factors already discussed, visitor rates are also influenced by various demographic factors. Among these factors, population size and GDP have a positive correlation with visitor rates, while unemployment rates have a negative correlation. However, of all these factors, population size has the most significant correlation with visitor rates, as revealed by correlation analysis.
+                     </p>
+                     <div class='tableauPlaceholder' id='viz1680605591696' style='position: relative'><noscript><a href='#'><img alt='DashboardFive ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFive&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VAProjectV2&#47;DashboardFive' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;VA&#47;VAProjectV2&#47;DashboardFive&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680605591696');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='2027px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  </div>
+                  <div class="tab-pane" id="tabs-13" role="tabpanel">
+                     <h3>Insights Summary </h3>
+                     <p>The most commonly searched attractions across all countries nationalities are Raffles Singapore, Orchard Road and Sentosa. People tend to visit places they research on.
+                        However, there is a surprise finding for Orchid Garden, tourist do not research on the place but they do visit the place.</p>
+                        <div class='tableauPlaceholder' id='viz1680604892598' style='position: relative'><noscript><a href='#'><img alt='Overall Google Search (Per Attraction) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;OverallGoogleSearchPerAttraction&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='GoogleSearchTrendsPerAttraction&#47;OverallGoogleSearchPerAttraction' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;OverallGoogleSearchPerAttraction&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680604892598');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='977px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                     <div class='tableauPlaceholder' id='viz1680604944287' style='position: relative'><noscript><a href='#'><img alt='Comparision between google search and visitation rates ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;Comparisionbetweengooglesearchandvisitationrates&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='GoogleSearchTrendsPerAttraction&#47;Comparisionbetweengooglesearchandvisitationrates' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Go&#47;GoogleSearchTrendsPerAttraction&#47;Comparisionbetweengooglesearchandvisitationrates&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1680604944287');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                     
+                     </div>
                </div>
-            </div>
-         </div>
       </div>
-   </div>
-   <!--  SECTION 6  -->
-   <a name="Section-4"></a>
-   <div class="row">
-      <div class="section-inner">
-         <div class="infographic-col">
+
+      <div id="opps" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+         <div class="row">
+            <div class="col-sm-6" >
+               <div class="infographic-col">
             <div class="infographic-title">
                <h1>Revitalising Singapore's Tourism Economy</h1>
                <h2>Strategies and Opportunities</h2>
             </div>
          </div>
-         <div class="text-col2">
-            <div class="text-right2">
-               <h3> Opportunity 1: Quarter 3 and Quarter 4 is the best time to push for sales to increase in Singapore Tourism revenue.</h3>
-               <p>During July- December,  it is the best time for companies who are in the Singapore tourism industry to form an alliance to push for sales, such as ensuring that the tourist attraction sites are open, and sufficient manpower to run the venue/attractions and run promotions. It would then make Singapore a more attractive destination on a whole.
-               </p>
-               <h3> Opportunity 2: Start marketing efforts to attract countries with cooler weather in their home country to visit Singapore, as from past trends they are more likely to visit Singapore.</h3>
-               <p>Market Singapore to the countries that experience cooler weather as a getaway to summer.</p>
-               <h3> Opportunity 3: The cultural attraction places are areas where Singapore can increase in the tourist revenue, as Singapore has yet to fully utilise the potential of these cultural attraction sites due to low number of visitors.</h3>
-               <p>Singapore Tourism Board can spend efforts on marketing Singapore as a cultural place and organize activities for the tourist to boost the number of visitors.  This  can also be in line with Singapore's bid for UNESCO world heritage sites.</p>
             </div>
-         </div>
-      </div>
-   </div>
-   <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-   <script src="./script.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-   <!-- partial -->
-   <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-   <script>
-  function startCounter(){
-	$('.counter').each(function (index) {
-        var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
-	    $(this).prop('Counter',0).animate({
-	        Counter: $(this).text()
-	    }, {
-	        duration: 4000,
-	        easing: 'swing',
-	        step: function (now) {
-	            $(this).text(parseFloat(now).toFixed(size));
-	        }
-	    });
-	});
-}	
-
-startCounter();
-
-function startCounter2(){
-	$('.counter2').each(function (index) {
-        var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
-	    $(this).prop('Counter2',0).animate({
-	        Counter: $(this).text()
-	    }, {
-	        duration: 4000,
-	        easing: 'swing',
-	        step: function (now) {
-	            $(this).text(parseFloat(now).toFixed(size));
-	        }
-	    });
-	});
-}	
-
-startCounter2();
-      // get the data
-      d3.csv("force.csv", function(error, links) {
-      
-      var nodes = {};
-      
-      // Compute the distinct nodes from the links.
-      links.forEach(function(link) {
-       link.source = nodes[link.source] || 
-           (nodes[link.source] = {name: link.source});
-       link.target = nodes[link.target] || 
-           (nodes[link.target] = {name: link.target});
-       link.value = +link.value;
-      });
-      
-      var width = 600,
-       height = 600;
-      
-      var force = d3.layout.force()
-       .nodes(d3.values(nodes))
-       .links(links)
-       .size([width, height])
-       .linkDistance(280)
-       .charge(-2800)
-       .on("tick", tick)
-       .start();
-      
-      // Set the range
-      var  v = d3.scale.linear().range([0, 500]);
-      
-      // Scale the range of the data
-      v.domain([0, d3.max(links, function(d) { return d.value; })]);
-      
-      // asign a type per value to encode opacity
-      links.forEach(function(link) {
-      if (link.value <= 100000) {
-       link.type = "lessthanhundredthousand";
-      link.size= 4;
-      } else if (link.value <= 500000 && link.value > 100000) {
-      link.type = "fivehundredthousand";
-      link.size= 8;
-      } else if (link.value <= 1000000 && link.value> 500000) {
-       link.type = "onemillion";
-       link.size= 12;
-      } else if (link.value <= 5000000 && link.value > 1000000) {
-       link.type = "fivemillion";
-       link.size= 16;
-      } else if (link.value <= 10000000 && link.value > 5000000) {
-       link.type = "tenmillion";
-       link.size=20;
-      }
-      });
-      
-      var svg = d3.select("#networkgraph2019").append("svg")
-       .attr("width", width)
-       .attr("height", height);
-      
-      
-      // tooltip div:
-      var tooltip = d3.select('#networkgraph2019').append("div")
-      								.classed("tooltip", true)
-      								.style("opacity", 0) // start invisible
+            <div class="col-sm-6">
+               <div class="text-right2">
+                  <h3> Opportunity 1: Quarter 3 and Quarter 4 is the best time to push for sales to increase in Singapore Tourism revenue.</h3>
+                  <p>During July- December,  it is the best time for companies who are in the Singapore tourism industry to form an alliance to push for sales, such as ensuring that the tourist attraction sites are open, and sufficient manpower to run the venue/attractions and run promotions. It would then make Singapore a more attractive destination on a whole.
+                  </p>
+                  <h3> Opportunity 2: Start marketing efforts to attract countries with cooler weather in their home country to visit Singapore, as from past trends they are more likely to visit Singapore.</h3>
+                  <p>Market Singapore to the countries that experience cooler weather as a getaway to summer.</p>
+                  <h3> Opportunity 3: The cultural attraction places are areas where Singapore can increase in the tourist revenue, as Singapore has yet to fully utilise the potential of these cultural attraction sites due to low number of visitors.</h3>
+                  <p>Singapore Tourism Board can spend efforts on marketing Singapore as a cultural place and organize activities for the tourist to boost the number of visitors.  This  can also be in line with Singapore's bid for UNESCO world heritage sites. Japanese tourists can be one of the targeted group.</p>
+               </div>
+            </div>
+          </div>
+       </div>
+      <script>
+         function startCounter(){
+          $('.counter').each(function (index) {
+               var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
+              $(this).prop('Counter',0).animate({
+                  Counter: $(this).text()
+              }, {
+                  duration: 4000,
+                  easing: 'swing',
+                  step: function (now) {
+                      $(this).text(parseFloat(now).toFixed(size));
+                  }
+              });
+          });
+         }	
          
-      // build the arrow.
-      svg.append("svg:defs").selectAll("marker")
-       .data(["end","lessthanhundredthousand", "fivehundredthousand", "onemillion","fivemillion","tenmillion"])      // Different link/path types can be defined here
-      .enter().append("svg:marker")    // This section adds in the arrows
-       .attr("id", String)
-       .attr("viewBox", "0 -5 10 10")
-       .attr("refX", 15)
-       .attr("refY", -1.5)
-       .attr("markerWidth", 6)
-       .attr("markerHeight", 6)
-       .attr("orient", "auto")
-      .append("svg:path")
-       .attr("d", "M0,-5L10,0L0,5");
-      
-      
-      // add the links and the arrows
-      var path = svg.append("g").selectAll("path")
-       .data(force.links())
-      .enter().append("path")
-       .attr("class", function(d) { return "link " + d.type; })
-       .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
-      
-      // define the nodes
-      var node = svg.selectAll(".node")
-       .data(force.nodes())
-      .enter().append("g")
-       .attr("class", "node")
-       .on("click", click)
-      // .on("dblclick", dblclick)
-       .call(force.drag) ;
-      
-      
-      // add the nodes
-      node.append("circle")
-       .attr("r", function(d) { 
-      
+         startCounter();
          
-      return d.weight;
-      }) ;
-      
-      
-      // add the text 
-      node.append("text")
-       .attr("x", 12)
-       .attr("dy", ".35em")
-       .text(function(d) { return d.name; });
-      
-      // add the curvy lines
-      function tick() {
-       path.attr("d", function(d) {
-         var dx = d.target.x - d.source.x,
-         dy = d.target.y - d.source.y,
-         dr = Math.sqrt(dx * dx + dy * dy);
-      return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
-       });
-      
-       node
-           .attr("transform", function(d) { 
-           return "translate(" + d.x + "," + d.y + ")"; });
-      }
-      
-      // action to take on mouse click
-      function click() {
-       d3.select(this).select("text").transition()
-           .duration(750)
-           .attr("x", 22)
-           .style("fill", "steelblue")
-           .style("stroke", "lightsteelblue")
-           .style("stroke-width", ".5px")
-           .style("font", "20px sans-serif");
-       d3.select(this).select("circle").transition()
-           .duration(750)
-           .attr("r", 16)
-           .style("fill", "lightsteelblue");
-      
-           
-      }
-      
-      function transform(d) {
-      return "translate(" + d.x + "," + d.y + ")";
-      }
-      
-      // action to take on mouse double click
-      function dblclick() {
-       d3.select(this).select("circle").transition()
-           .duration(750)
-           .attr("r", 6)
-           .style("fill", "#ccc");
-       d3.select(this).select("text").transition()
-           .duration(750)
-           .attr("x", 12)
-           .style("stroke", "none")
-           .style("fill", "black")
-           .style("stroke", "none")
-           .style("font", "10px sans-serif");
-      
-           
-      }
-      
-      
-      var div = d3.select("#networkgraphtext2019");
-      d3.selectAll(".node").on("mouseover", function(d, i){
-      div.style("visibility", "visible")
-        .transition()
-        .duration(200)
-        .style("opacity", .9);
-      var html;
-      if(d.in == d.out)
-      
-       html = d.name
-      
-      div.html(html)
-        .style("right", (d.x + 0.5) + "px")
-        .style("top", (d.y - 0.1) + "px");
-      }).on("mouseout", function(d, i){
-      div.transition()
-        .duration(500)
-        .style("opacity", 0)
-        .each("end", function(){
-          div.style("visibility", "hidden")
-        });
-      });
-      
-      });
-      
-      
-      
-      //2022
-      
-      // get the data
-      d3.csv("force_2022.csv", function(error, links) {
-      
-      var nodes = {};
-      
-      // Compute the distinct nodes from the links.
-      links.forEach(function(link) {
-       link.source = nodes[link.source] || 
-           (nodes[link.source] = {name: link.source});
-       link.target = nodes[link.target] || 
-           (nodes[link.target] = {name: link.target});
-       link.value = +link.value;
-      });
-      
-      var width = 600,
-       height = 600;
-      
-      var force = d3.layout.force()
-       .nodes(d3.values(nodes))
-       .links(links)
-       .size([width, height])
-       .linkDistance(280)
-       .charge(-1800)
-       .on("tick", tick)
-       .start();
-      
-      // Set the range
-      var  v = d3.scale.linear().range([0, 500]);
-      
-      // Scale the range of the data
-      v.domain([0, d3.max(links, function(d) { return d.value; })]);
-      
-      // asign a type per value to encode opacity
-      links.forEach(function(link) {
-      if (link.value <= 100000) {
-       link.type = "lessthanhundredthousand";
-      link.size= 4;
-      } else if (link.value <= 500000 && link.value > 100000) {
-      link.type = "fivehundredthousand";
-      link.size= 8;
-      } else if (link.value <= 1000000 && link.value> 500000) {
-       link.type = "onemillion";
-       link.size= 12;
-      } else if (link.value <= 5000000 && link.value > 1000000) {
-       link.type = "fivemillion";
-       link.size= 16;
-      } else if (link.value <= 10000000 && link.value > 5000000) {
-       link.type = "tenmillion";
-       link.size=20;
-      }
-      });
-      
-      var svg = d3.select("#networkgraph2022").append("svg")
-       .attr("width", width)
-       .attr("height", height);
-      
-      
-      // tooltip div:
-      var tooltip = d3.select('#networkgraph2022').append("div")
-      								.classed("tooltip", true)
-      								.style("opacity", 0) // start invisible
+         function startCounter2(){
+          $('.counter2').each(function (index) {
+               var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
+              $(this).prop('Counter2',0).animate({
+                  Counter: $(this).text()
+              }, {
+                  duration: 4000,
+                  easing: 'swing',
+                  step: function (now) {
+                      $(this).text(parseFloat(now).toFixed(size));
+                  }
+              });
+          });
+         }	
          
-      // build the arrow.
-      svg.append("svg:defs").selectAll("marker")
-       .data(["end","lessthanhundredthousand", "fivehundredthousand", "onemillion","fivemillion","tenmillion"])      // Different link/path types can be defined here
-      .enter().append("svg:marker")    // This section adds in the arrows
-       .attr("id", String)
-       .attr("viewBox", "0 -5 10 10")
-       .attr("refX", 15)
-       .attr("refY", -1.5)
-       .attr("markerWidth", 6)
-       .attr("markerHeight", 6)
-       .attr("orient", "auto")
-      .append("svg:path")
-       .attr("d", "M0,-5L10,0L0,5");
-      
-      
-      // add the links and the arrows
-      var path = svg.append("g").selectAll("path")
-       .data(force.links())
-      .enter().append("path")
-       .attr("class", function(d) { return "link " + d.type; })
-       .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
-      
-      // define the nodes
-      var node = svg.selectAll(".node")
-       .data(force.nodes())
-      .enter().append("g")
-       .attr("class", "node")
-       .on("click", click)
-      // .on("dblclick", dblclick)
-       .call(force.drag) ;
-      
-      
-      // add the nodes
-      node.append("circle")
-       .attr("r", function(d) { 
-      
-         
-      return d.weight;
-      }) ;
-      
-      
-      // add the text 
-      node.append("text")
-       .attr("x", 12)
-       .attr("dy", ".35em")
-       .text(function(d) { return d.name; });
-      
-      // add the curvy lines
-      function tick() {
-       path.attr("d", function(d) {
-         var dx = d.target.x - d.source.x,
-         dy = d.target.y - d.source.y,
-         dr = Math.sqrt(dx * dx + dy * dy);
-      return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
-       });
-      
-       node
-           .attr("transform", function(d) { 
-           return "translate(" + d.x + "," + d.y + ")"; });
-      }
-      
-      // action to take on mouse click
-      function click() {
-       d3.select(this).select("text").transition()
-           .duration(750)
-           .attr("x", 22)
-           .style("fill", "steelblue")
-           .style("stroke", "lightsteelblue")
-           .style("stroke-width", ".5px")
-           .style("font", "20px sans-serif");
-       d3.select(this).select("circle").transition()
-           .duration(750)
-           .attr("r", 16)
-           .style("fill", "lightsteelblue");
-      
-           
-      }
-      
-      function transform(d) {
-      return "translate(" + d.x + "," + d.y + ")";
-      }
-      
-      // action to take on mouse double click
-      function dblclick() {
-       d3.select(this).select("circle").transition()
-           .duration(750)
-           .attr("r", 6)
-           .style("fill", "#ccc");
-       d3.select(this).select("text").transition()
-           .duration(750)
-           .attr("x", 12)
-           .style("stroke", "none")
-           .style("fill", "black")
-           .style("stroke", "none")
-           .style("font", "10px sans-serif");
-      
-           
-      }
-      
-      
-      var div = d3.select("#networkgraphtext2022");
-      d3.selectAll(".node").on("mouseover", function(d, i){
-      div.style("visibility", "visible")
-        .transition()
-        .duration(200)
-        .style("opacity", .9);
-      var html;
-      if(d.in == d.out)
-      
-       html = d.name
-      
-      div.html(html)
-        .style("right", (d.x + 0.5) + "px")
-        .style("top", (d.y - 0.1) + "px");
-      }).on("mouseout", function(d, i){
-      div.transition()
-        .duration(500)
-        .style("opacity", 0)
-        .each("end", function(){
-          div.style("visibility", "hidden")
-        });
-      });
-      
-      });
-      
-            
-   </script>
+         startCounter2();
+             // get the data
+             d3.csv("force.csv", function(error, links) {
+             
+             var nodes = {};
+             
+             // Compute the distinct nodes from the links.
+             links.forEach(function(link) {
+              link.source = nodes[link.source] || 
+                  (nodes[link.source] = {name: link.source});
+              link.target = nodes[link.target] || 
+                  (nodes[link.target] = {name: link.target});
+              link.value = +link.value;
+             });
+             
+             var width = 600,
+              height = 600;
+             
+             var force = d3.layout.force()
+              .nodes(d3.values(nodes))
+              .links(links)
+              .size([width, height])
+              .linkDistance(280)
+              .charge(-2800)
+              .on("tick", tick)
+              .start();
+             
+             // Set the range
+             var  v = d3.scale.linear().range([0, 500]);
+             
+             // Scale the range of the data
+             v.domain([0, d3.max(links, function(d) { return d.value; })]);
+             
+             // asign a type per value to encode opacity
+             links.forEach(function(link) {
+             if (link.value <= 100000) {
+              link.type = "lessthanhundredthousand";
+             link.size= 4;
+             } else if (link.value <= 500000 && link.value > 100000) {
+             link.type = "fivehundredthousand";
+             link.size= 8;
+             } else if (link.value <= 1000000 && link.value> 500000) {
+              link.type = "onemillion";
+              link.size= 12;
+             } else if (link.value <= 5000000 && link.value > 1000000) {
+              link.type = "fivemillion";
+              link.size= 16;
+             } else if (link.value <= 10000000 && link.value > 5000000) {
+              link.type = "tenmillion";
+              link.size=20;
+             }
+             });
+             
+             var svg = d3.select("#networkgraph2019").append("svg")
+              .attr("width", width)
+              .attr("height", height);
+             
+             
+             // tooltip div:
+             var tooltip = d3.select('#networkgraph2019').append("div")
+                                     .classed("tooltip", true)
+                                     .style("opacity", 0) // start invisible
+                
+             // build the arrow.
+             svg.append("svg:defs").selectAll("marker")
+              .data(["end","lessthanhundredthousand", "fivehundredthousand", "onemillion","fivemillion","tenmillion"])      // Different link/path types can be defined here
+             .enter().append("svg:marker")    // This section adds in the arrows
+              .attr("id", String)
+              .attr("viewBox", "0 -5 10 10")
+              .attr("refX", 15)
+              .attr("refY", -1.5)
+              .attr("markerWidth", 6)
+              .attr("markerHeight", 6)
+              .attr("orient", "auto")
+             .append("svg:path")
+              .attr("d", "M0,-5L10,0L0,5");
+             
+             
+             // add the links and the arrows
+             var path = svg.append("g").selectAll("path")
+              .data(force.links())
+             .enter().append("path")
+              .attr("class", function(d) { return "link " + d.type; })
+              .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
+             
+             // define the nodes
+             var node = svg.selectAll(".node")
+              .data(force.nodes())
+             .enter().append("g")
+              .attr("class", "node")
+              .on("click", click)
+             // .on("dblclick", dblclick)
+              .call(force.drag) ;
+             
+             
+             // add the nodes
+             node.append("circle")
+              .attr("r", function(d) { 
+             
+                
+             return d.weight;
+             }) ;
+             
+             
+             // add the text 
+             node.append("text")
+              .attr("x", 12)
+              .attr("dy", ".35em")
+              .text(function(d) { return d.name; });
+             
+             // add the curvy lines
+             function tick() {
+              path.attr("d", function(d) {
+                var dx = d.target.x - d.source.x,
+                dy = d.target.y - d.source.y,
+                dr = Math.sqrt(dx * dx + dy * dy);
+             return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+              });
+             
+              node
+                  .attr("transform", function(d) { 
+                  return "translate(" + d.x + "," + d.y + ")"; });
+             }
+             
+             // action to take on mouse click
+             function click() {
+              d3.select(this).select("text").transition()
+                  .duration(750)
+                  .attr("x", 22)
+                  .style("fill", "steelblue")
+                  .style("stroke", "lightsteelblue")
+                  .style("stroke-width", ".5px")
+                  .style("font", "20px sans-serif");
+              d3.select(this).select("circle").transition()
+                  .duration(750)
+                  .attr("r", 16)
+                  .style("fill", "lightsteelblue");
+             
+                  
+             }
+             
+             function transform(d) {
+             return "translate(" + d.x + "," + d.y + ")";
+             }
+             
+             // action to take on mouse double click
+             function dblclick() {
+              d3.select(this).select("circle").transition()
+                  .duration(750)
+                  .attr("r", 6)
+                  .style("fill", "#ccc");
+              d3.select(this).select("text").transition()
+                  .duration(750)
+                  .attr("x", 12)
+                  .style("stroke", "none")
+                  .style("fill", "black")
+                  .style("stroke", "none")
+                  .style("font", "10px sans-serif");
+             
+                  
+             }
+             
+             
+             var div = d3.select("#networkgraphtext2019");
+             d3.selectAll(".node").on("mouseover", function(d, i){
+             div.style("visibility", "visible")
+               .transition()
+               .duration(200)
+               .style("opacity", .9);
+             var html;
+             if(d.in == d.out)
+             
+              html = d.name
+             
+             div.html(html)
+               .style("right", (d.x + 0.5) + "px")
+               .style("top", (d.y - 0.1) + "px");
+             }).on("mouseout", function(d, i){
+             div.transition()
+               .duration(500)
+               .style("opacity", 0)
+               .each("end", function(){
+                 div.style("visibility", "hidden")
+               });
+             });
+             
+             });
+             
+             
+             
+             //2022
+             
+             // get the data
+             d3.csv("force_2022.csv", function(error, links) {
+             
+             var nodes = {};
+             
+             // Compute the distinct nodes from the links.
+             links.forEach(function(link) {
+              link.source = nodes[link.source] || 
+                  (nodes[link.source] = {name: link.source});
+              link.target = nodes[link.target] || 
+                  (nodes[link.target] = {name: link.target});
+              link.value = +link.value;
+             });
+             
+             var width = 600,
+              height = 600;
+             
+             var force = d3.layout.force()
+              .nodes(d3.values(nodes))
+              .links(links)
+              .size([width, height])
+              .linkDistance(280)
+              .charge(-1800)
+              .on("tick", tick)
+              .start();
+             
+             // Set the range
+             var  v = d3.scale.linear().range([0, 500]);
+             
+             // Scale the range of the data
+             v.domain([0, d3.max(links, function(d) { return d.value; })]);
+             
+             // asign a type per value to encode opacity
+             links.forEach(function(link) {
+             if (link.value <= 100000) {
+              link.type = "lessthanhundredthousand";
+             link.size= 4;
+             } else if (link.value <= 500000 && link.value > 100000) {
+             link.type = "fivehundredthousand";
+             link.size= 8;
+             } else if (link.value <= 1000000 && link.value> 500000) {
+              link.type = "onemillion";
+              link.size= 12;
+             } else if (link.value <= 5000000 && link.value > 1000000) {
+              link.type = "fivemillion";
+              link.size= 16;
+             } else if (link.value <= 10000000 && link.value > 5000000) {
+              link.type = "tenmillion";
+              link.size=20;
+             }
+             });
+             
+             var svg = d3.select("#networkgraph2022").append("svg")
+              .attr("width", width)
+              .attr("height", height);
+             
+             
+             // tooltip div:
+             var tooltip = d3.select('#networkgraph2022').append("div")
+                                     .classed("tooltip", true)
+                                     .style("opacity", 0) // start invisible
+                
+             // build the arrow.
+             svg.append("svg:defs").selectAll("marker")
+              .data(["end","lessthanhundredthousand", "fivehundredthousand", "onemillion","fivemillion","tenmillion"])      // Different link/path types can be defined here
+             .enter().append("svg:marker")    // This section adds in the arrows
+              .attr("id", String)
+              .attr("viewBox", "0 -5 10 10")
+              .attr("refX", 15)
+              .attr("refY", -1.5)
+              .attr("markerWidth", 6)
+              .attr("markerHeight", 6)
+              .attr("orient", "auto")
+             .append("svg:path")
+              .attr("d", "M0,-5L10,0L0,5");
+             
+             
+             // add the links and the arrows
+             var path = svg.append("g").selectAll("path")
+              .data(force.links())
+             .enter().append("path")
+              .attr("class", function(d) { return "link " + d.type; })
+              .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
+             
+             // define the nodes
+             var node = svg.selectAll(".node")
+              .data(force.nodes())
+             .enter().append("g")
+              .attr("class", "node")
+              .on("click", click)
+             // .on("dblclick", dblclick)
+              .call(force.drag) ;
+             
+             
+             // add the nodes
+             node.append("circle")
+              .attr("r", function(d) { 
+             
+                
+             return d.weight;
+             }) ;
+             
+             
+             // add the text 
+             node.append("text")
+              .attr("x", 12)
+              .attr("dy", ".35em")
+              .text(function(d) { return d.name; });
+             
+             // add the curvy lines
+             function tick() {
+              path.attr("d", function(d) {
+                var dx = d.target.x - d.source.x,
+                dy = d.target.y - d.source.y,
+                dr = Math.sqrt(dx * dx + dy * dy);
+             return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+              });
+             
+              node
+                  .attr("transform", function(d) { 
+                  return "translate(" + d.x + "," + d.y + ")"; });
+             }
+             
+             // action to take on mouse click
+             function click() {
+              d3.select(this).select("text").transition()
+                  .duration(750)
+                  .attr("x", 22)
+                  .style("fill", "steelblue")
+                  .style("stroke", "lightsteelblue")
+                  .style("stroke-width", ".5px")
+                  .style("font", "20px sans-serif");
+              d3.select(this).select("circle").transition()
+                  .duration(750)
+                  .attr("r", 16)
+                  .style("fill", "lightsteelblue");
+             
+                  
+             }
+             
+             function transform(d) {
+             return "translate(" + d.x + "," + d.y + ")";
+             }
+             
+             // action to take on mouse double click
+             function dblclick() {
+              d3.select(this).select("circle").transition()
+                  .duration(750)
+                  .attr("r", 6)
+                  .style("fill", "#ccc");
+              d3.select(this).select("text").transition()
+                  .duration(750)
+                  .attr("x", 12)
+                  .style("stroke", "none")
+                  .style("fill", "black")
+                  .style("stroke", "none")
+                  .style("font", "10px sans-serif");
+             
+                  
+             }
+             
+             
+             var div = d3.select("#networkgraphtext2022");
+             d3.selectAll(".node").on("mouseover", function(d, i){
+             div.style("visibility", "visible")
+               .transition()
+               .duration(200)
+               .style("opacity", .9);
+             var html;
+             if(d.in == d.out)
+             
+              html = d.name
+             
+             div.html(html)
+               .style("right", (d.x + 0.5) + "px")
+               .style("top", (d.y - 0.1) + "px");
+             }).on("mouseout", function(d, i){
+             div.transition()
+               .duration(500)
+               .style("opacity", 0)
+               .each("end", function(){
+                 div.style("visibility", "hidden")
+               });
+             });
+             
+             });
+             
+                   
+          
+      </script>
    </body>
 </html>
