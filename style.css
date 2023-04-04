@@ -402,7 +402,7 @@ width: 1500px;
 }
 
 .infographic-col {
-	background-color: white;
+	background-color: transparent;
 	flex:1;
 	height: 100%;
 }
@@ -778,4 +778,23 @@ path.link {
 	background-size: cover;
 	background-position: 0% 70%;
 	background-repeat: no-repeat;
+  }
+
+  .nav-tabs{
+	color:#F26322;
+  }
+  .nav-item{
+	color:#F26322;
+  }
+
+  .reveal{
+	position: relative;
+	transform: translateY(150px);
+	opacity: 0;
+	transition: 1s all ease;
+  }
+  
+  .reveal.active{
+	transform: translateY(0);
+	opacity: 1;
   }
