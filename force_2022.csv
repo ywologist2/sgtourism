@@ -1,0 +1,28 @@
+source,target,value,size
+Indonesia,Singapore,1104167,16
+Malaysia,Singapore,590954,16
+Philippines,Singapore,381986,8
+Thailand,Singapore,283430,4
+China,Singapore,130867,16
+Hong Kong ,Singapore,129039,4
+Vietnam,Singapore,312713,8
+China,Singapore,130867,16
+Hong Kong ,Singapore,129039,4
+Japan,Singapore,132097,8
+Singapore,Malaysia,1789994,16
+Singapore,Indonesia,1649914,16
+Singapore,Philippines,961358,16
+Singapore,Thailand,1516589,16
+Singapore,Vietnam,819265,16
+Singapore,China,107618,16
+Singapore,Hong Kong ,162866,16
+Singapore,Japan,501529,16
+Hong Kong ,Vietnam,43,2
+China,Vietnam,71862,16
+Philippines,Vietnam,36281,4
+Thailand,Vietnam,162657,4
+Indonesia,Vietnam,26338,4
+China,Malaysia,71862,16
+Vietnam,Malaysia,173763,16
+Indonesia,Malaysia,4580000,16
+Thailand,Malaysia,10000000,16
