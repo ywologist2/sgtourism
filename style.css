@@ -733,7 +733,14 @@ path.link {
    color: 	#ffff;
    font-size: 1.2em;
 }
+.counter1
+{
+	font-family: 'Montserrat';
 
+	font-weight: 100;
+   color: 	#ffff;
+   font-size: 1.2em;
+}
 .smalltext{
 	width:30px;
 }
